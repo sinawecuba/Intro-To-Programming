@@ -22,3 +22,13 @@ var randomInsult = "Your " + randomFamilyMember + " is " + randomAdjective + " t
 
 console.log(randomInsult);
 
+
+//Creating Insult Using an Array
+var familyMember = "Dad"
+var adjective = "uglier"
+var animal = "rat's"
+var bodypart = "toenail"
+
+var arrayInsult = [ " Your ", familyMember, " is ", adjective, " than a ", animal, bodypart, "!!!" ];
+
+console.log(arrayInsult);
