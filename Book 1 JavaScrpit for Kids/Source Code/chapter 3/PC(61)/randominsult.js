@@ -1,3 +1,4 @@
+//
 var randomFamilyMember = ["Mom", "Dad", "Brother", "Grandma"];
 var randomAdjectives = ["older", "fatter", "dumber", "Uglier"];
 var randomAnimal = ["Rat's", "Snake's", "Donakey's", "Cockroach's", "Frog's"];
@@ -23,12 +24,14 @@ var randomInsult = "Your " + randomFamilyMember + " is " + randomAdjective + " t
 console.log(randomInsult);
 
 
-//Creating Insult Using an Array
-var familyMember = "Dad"
-var adjective = "uglier"
-var animal = "rat's"
-var bodypart = "toenail"
+//Creating Insult Using an using .join
+var insultSentnce = [ "Your", "Dad", "is", "uglier", "than a", "rat's", "toenail", "!!!" ];
+var arrayInsult = insultSentnce.join( " ")
+console.log("Insult using array:", arrayInsult);
 
-var arrayInsult = [ " Your ", familyMember, " is ", adjective, " than a ", animal, bodypart, "!!!" ];
 
-console.log(arrayInsult);
+
+// turn the array [3, 2, 1] into the string
+var numberCountDown = ['3', '2', '1']
+var fullSentence = numberCountDown.join( " is bigger than ");
+console.log("Completed Sentence:", fullSentence);
