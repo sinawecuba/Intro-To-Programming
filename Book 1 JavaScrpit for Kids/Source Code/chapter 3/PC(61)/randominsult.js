@@ -19,16 +19,17 @@ var randomBodyPart = randomBodyPart[Math.floor(Math.random() *
  randomBodyPart.length)]
 
 // Join all the random strings into a sentence:
-var randomInsult = "Your " + randomFamilyMember + " is " + randomAdjective + " than a " +  randomAnimal + " " + randomBodyPart + "!!!";
+var randomInsult = "Your " + randomFamilyMember + " is " + randomAdjective + " than a " +  randomAnimal + " " + randomBodyPart + " !!! ";
 
 console.log(randomInsult);
 
 
 //Creating Insult Using an using .join
 var insultSentnce = [ "Your", "Dad", "is", "uglier", "than a", "rat's", "toenail", "!!!" ];
-var arrayInsult = insultSentnce.join( " ")
+var arrayInsult = insultSentnce.join(" ")
 console.log("Insult using array:", arrayInsult);
-
+// Using the .join method is simpler than using the "+" method, But i was able to get a wider variety of answers using the "+". 
+// So overall i would prefer using the "+" method to create a string, despite it taking a little bit more time to set up.
 
 
 // turn the array [3, 2, 1] into the string
