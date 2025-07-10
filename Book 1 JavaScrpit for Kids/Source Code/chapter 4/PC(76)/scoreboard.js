@@ -1,4 +1,4 @@
-// Scores is the object with the names as keys and the score starting at 0
+//Question1: Scores is the object with the names as keys and the score starting at 0
 
 var scores = {                    // Create an object to store scores for each person
     Sinawe: 0,                    // Set Sinawe's initial score to 0
@@ -22,3 +22,13 @@ scores.Jamo = 8;                                         // Update Jamo's score 
 console.log("Jamo's Score:", scores.Jamo);              // Print Jamo's updated score
 
 
+//Question 2: Digging into objects and arrays
+ var myCrazyObject = {
+  "name": "A ridiculous object",
+  "some array": [7, 9, { purpose: "confusion", number: 123 }, 3.3],
+  "random animal": "Banana Shark"
+ };
+
+ console.log("-----Getting 123 out-----");
+
+ console.log(myCrazyObject["some array"][2]["number"]);
