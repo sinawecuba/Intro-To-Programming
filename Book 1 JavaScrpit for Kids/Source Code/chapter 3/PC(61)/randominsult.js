@@ -25,11 +25,10 @@ console.log(randomInsult);
 
 
 //Creating Insult Using an using .join
-var insultSentnce = [ "Your", "Dad", "is", "uglier", "than a", "rat's", "toenail", "!!!" ];
+var insultSentnce = [ "Your" , randomFamilyMember , "is", randomAdjective, "than a", randomAnimal, randomBodyPart, "!!!" ];
 var arrayInsult = insultSentnce.join(" ")
 console.log("Insult using array:", arrayInsult);
-// Using the .join method is simpler than using the "+" method, But i was able to get a wider variety of answers using the "+". 
-// So overall i would prefer using the "+" method to create a string, despite it taking a little bit more time to set up.
+// Using the .join method is simpler than using the "+" method. 
 
 
 // turn the array [3, 2, 1] into the string
