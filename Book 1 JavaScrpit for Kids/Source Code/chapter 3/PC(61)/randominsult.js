@@ -27,7 +27,7 @@ console.log(randomInsult);
 //Creating Insult Using an using .join
 var insultSentnce = [ "Your" , randomFamilyMember , "is", randomAdjective, "than a", randomAnimal, randomBodyPart, "!!!" ];
 var arrayInsult = insultSentnce.join(" ")
-console.log("Insult using array:", arrayInsult);
+console.log("Insult using join:", arrayInsult);
 // Using the .join method is simpler than using the "+" method. 
 
 
