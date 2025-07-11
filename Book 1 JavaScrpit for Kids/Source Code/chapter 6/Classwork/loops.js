@@ -16,3 +16,10 @@ for (var carsSold = 22; carsSold > 0; carsSold -= 3) {       // Start at 22, loo
 
 console.log("CHA-CHING!!!");                                 // Print this after the loop ends
                               
+console.log("------FOR LOOP WITH ARRAY-------")
+var fruit = ["Mangos", "Apples", "Cherries", "Bananas", "Strawberries", "Limes"]; // Create an array of fruit names
+for (var w = 2; w < fruit.length; w++) {                                           // Start at index 2, loop until the end of the array
+  console.log("This markert has the sweetest " + fruit[w] + "!!!");               // Print message for each fruit starting from index 2
+}
+
+
