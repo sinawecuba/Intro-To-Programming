@@ -23,12 +23,15 @@ console.log("Jamo's Score:", scores.Jamo);              // Print Jamo's updated 
 
 
 //Question 2: Digging into objects and arrays
- var myCrazyObject = {
-  "name": "A ridiculous object",
-  "some array": [7, 9, { purpose: "confusion", number: 123 }, 3.3],
-  "random animal": "Banana Shark"
- };
+var myCrazyObject = {                                                // Create an object named myCrazyObject
+  "name": "A ridiculous object",                                     // A key "name" with a string value
+  "some array": [7, 9, { purpose: "confusion", number: 123 }, 3.3],  // A key with an array value containing numbers and an object
+  "random animal": "Banana Shark"                                    // A key with a fun string value
+};
 
- console.log("-----Getting 123 out-----");
+console.log("-----Getting 123 out-----");                             // Print a header for the output
 
- console.log(myCrazyObject["some array"][2]["number"]);
+console.log(myCrazyObject["some array"][2]["number"]);               // Access and print the number 123 from the nested object inside the array
+
+ 
+
