@@ -22,4 +22,12 @@ for (var w = 2; w < fruit.length; w++) {                                        
   console.log("This markert has the sweetest " + fruit[w] + "!!!");               // Print message for each fruit starting from index 2
 }
 
+console.log("--------------DO WHILE LOOP-------")
+let number = 5;  // Start with number 5
+
+do {
+    console.log(number); // Print the current number
+    number--;            // Minus 1 to the number
+} while (number >= 0);   // Keep going while number is 0 or more
+
 
