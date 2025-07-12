@@ -15,4 +15,15 @@ if (name2 === "Jenny") {                      // Check if 'name2' is exactly equ
 }
 
 
-    console.log("-------Mom & Dad-------")
+    console.log("-------Mom & Dad-------")           // Print a heading
+
+var Dad = false;                                 // Set the variable 'Dad' to false
+var Mom = true;                                  // Set the variable 'Mom' to true
+
+if (Dad) {                                       // Check if 'Dad' is true
+  console.log("Hi dad");                         // If true, print this
+} else if (Mom) {                                // If 'Dad' is false, check if 'Mom' is true
+  console.log("Hi Mom");                         // If true, print this
+} else {                                         // If neither 'Dad' nor 'Mom' is true...
+  console.log("Hello Stranger!");                // ...print this
+}
