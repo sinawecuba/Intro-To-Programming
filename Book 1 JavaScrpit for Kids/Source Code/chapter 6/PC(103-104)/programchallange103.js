@@ -8,7 +8,14 @@ for (var w = 0; w < animals.length; w++) {               // Loop through each in
 console.log(animals);                                    // Print the updated array to the console
 
 
-
 console.log("-----2.Random String Generator-----")
 
+var alphabet = "abcdefghijklmnopqrstuvwxyz";
+var randomString = " ";
 
+while (randomString.length < 16 ) {
+    var randomIndex = Math.floor(Math.random() * alphabet.length);
+    var randomLetter = alphabet[randomIndex];
+    randomString += randomLetter;
+}
+console.log(randomString);
