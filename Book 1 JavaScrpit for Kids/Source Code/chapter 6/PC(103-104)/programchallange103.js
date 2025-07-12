@@ -10,12 +10,14 @@ console.log(animals);                                    // Print the updated ar
 
 console.log("-----2.Random String Generator-----")
 
-var alphabet = "abcdefghijklmnopqrstuvwxyz";
-var randomString = " ";
+var alphabet = "abcdefghijklmnopqrstuvwxyz";        // A string containing all letters of the alphabet
+var randomString = " ";                             // Start with a space (can be "" if you prefer no leading space)
 
-while (randomString.length < 16 ) {
-    var randomIndex = Math.floor(Math.random() * alphabet.length);
-    var randomLetter = alphabet[randomIndex];
-    randomString += randomLetter;
+while (randomString.length < 16) {                  // Keep looping until the string is at least 16 characters long
+    var randomIndex = Math.floor(Math.random() * alphabet.length); // Pick a random index (0 to 25)
+    var randomLetter = alphabet[randomIndex];       // Get the letter at that index
+    randomString += randomLetter;                   // Add the random letter to the string
 }
-console.log(randomString);
+
+console.log(randomString);                          // Print the final random string
+
