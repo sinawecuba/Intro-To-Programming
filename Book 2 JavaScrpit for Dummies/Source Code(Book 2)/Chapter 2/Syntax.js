@@ -8,7 +8,7 @@ for (var i = 0; i < 5; i++) {                              // Loop 5 times
   document.write("Joe said, \"Hi!\"<br>");                 // Write quoted text with escaped quotes
 }
 
-for (var i = 0; i < 8; i++) {                              // Loop 5 times
+for (var i = 0; i < 8; i++) {                              // Loop 8 times
   document.write("Liverpool FC, \"won the league!\"<br>");                 // Write quoted text with escaped quotes
 }
 
