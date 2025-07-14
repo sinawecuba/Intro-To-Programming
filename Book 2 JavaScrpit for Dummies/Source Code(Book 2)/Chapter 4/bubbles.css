@@ -1,0 +1,20 @@
+#o { 
+  width: 400px;                            /* Sets width of the container */
+  height: 400px;                           /* Sets height of the container */
+  position: relative;                      /* Enables absolute positioning of child elements */
+  margin-left: auto;                       /* Centers the container horizontally */
+  margin-right: auto; 
+}
+
+.bubble { 
+  border: 8px double #141414;              /* White border around each bubble */
+  display: block;                         /* Makes the span act like a block element */
+  position: absolute;                     /* Allows bubbles to be positioned anywhere inside #o */
+  border-radius: 20px;                    /* Makes corners rounded (circle if width = height) */
+  -webkit-border-radius: 20px;            /* WebKit (Safari/Chrome) support for older versions */
+  -moz-border-radius: 20px;               /* Firefox support for older versions */
+}
+
+body {
+  background-color: #cef50d;              /* Sets the background color of the page (blue shade) */
+}
