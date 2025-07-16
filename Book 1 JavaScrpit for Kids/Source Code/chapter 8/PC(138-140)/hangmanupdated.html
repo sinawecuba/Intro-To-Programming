@@ -1,80 +1,112 @@
-<!DOCTYPE html>                                        <!-- Defines this document as HTML5 -->
+<!DOCTYPE html>
 <html>
+
 <head>
-    <title>Hangman Updated!</title>                           <!-- Page title shown in browser tab -->
+    <title>Hangman!</title>
 </head>
+
 <body>
-    <h1>Hangman Updated!</h1>                                 <!-- Main heading visible on the page -->
+    <h1>Hangman!</h1>
 
     <script>
-        console.log("-----Hangman Updated-----");              // Log game start message in browser console
+        // Picks a random word from the list
+        var pickWord = function () {
+            var words = [
+                "javascript",
+                "monkey",
+                "amazing",
+                "pancake",
+                "banana",
+                "jersey",
+                "blanket",
+                "coffee",
+                "raptor",
+                "internazionale",
+                "atletico",
+                "manchester",
+                "dubai"
+            ];
+            return words[Math.floor(Math.random() * words.length)];
+        };
 
-        // Array of possible secret words
-        var words = [
-            "banana",
-            "giraffe",
-            "computer",
-            "wizard"
-        ];
+        // Sets up the answer array with underscores
+        var setupAnswerArray = function (word) {
+            var answerArray = [];
+            for (var i = 0; i < word.length; i++) {
+                answerArray[i] = "_";
+            }
+            return answerArray;
+        };
 
-        // Randomly select a word from the array
-        var word = words[Math.floor(Math.random() * words.length)];
+        // Shows the player's current progress
+        var showPlayerProgress = function (answerArray) {
+            alert(answerArray.join(" "));
+        };
 
-        var answerArray = [];                            // Array to store underscores and guesses
+        // Prompts the player for a guess
+        var getGuess = function () {
+            return prompt("Guess a letter, or click Cancel to stop playing.");
+        };
 
-        // Initialize answerArray with underscores for each letter in the word
-        for (var i = 0; i < word.length; i++) {
-            answerArray[i] = "_";
-        }
-
-        var remainingLetters = word.length;              // Number of letters still to guess
-        var maxGuesses = 10;                             // Maximum number of guesses allowed
-        var guessesUsed = 0;                             // Counter for how many guesses have been made
-
-        // Main game loop runs while letters remain and guesses left
-        while (remainingLetters > 0 && guessesUsed < maxGuesses) {
-            console.log(answerArray.join(" "));          // Display current word progress in console
-
-            // Show current word state and guesses left in an alert box
-            alert("Word: " + answerArray.join(" ") +
-                  "\nGuesses left: " + (maxGuesses - guessesUsed));
-
-            // Prompt user to guess a letter or cancel to quit
-            var guess = prompt("Guess a letter, or click Cancel to stop playing.");
-
-            if (guess === null) {                         // If user cancels the prompt
-                break;                                   // Exit the game loop
-            } else if (guess.length !== 1) {             // Validate input is a single character
-                alert("Please enter a single letter.");  // Alert if invalid input
-            } else {
-                guess = guess.toLowerCase();              // Convert guess to lowercase to match word
-                var correctGuess = false;                  // Flag to check if guess was correct
-
-                // Check each letter in the secret word
-                for (var j = 0; j < word.length; j++) {
-                    // If guess matches letter and not already guessed
-                    if (word[j] === guess && answerArray[j] === "_") {
-                        answerArray[j] = guess;            // Reveal guessed letter
-                        remainingLetters--;                // Decrement remaining letters count
-                        correctGuess = true;               // Mark guess as correct
-                    }
+        // Updates the game state and returns how many times the guess appears
+        var updateGameState = function (guess, word, answerArray) {
+            var appearances = 0;
+            for (var i = 0; i < word.length; i++) {
+                if (word[i] === guess && answerArray[i] === "_") {
+                    answerArray[i] = guess;
+                    appearances++;
                 }
+            }
+            return appearances;
+        };
 
-                guessesUsed++;                             // Increment number of guesses taken
+        // Shows final answer and congratulates player
+        var showAnswerAndCongratulatePlayer = function (answerArray, word) {
+            alert(answerArray.join(" "));
+            alert("🎉 Good job! The answer was: " + word);
+        };
+
+        // Start game setup
+        var word = pickWord();
+        var answerArray = setupAnswerArray(word);
+        var remainingLetters = word.length;
+        var maxGuesses = 10;
+        var remainingGuesses = maxGuesses;
+
+        // Main game loop
+        while (remainingLetters > 0 && remainingGuesses > 0) {
+            showPlayerProgress(answerArray);                         // Show current guessed letters
+            alert("Guesses left: " + remainingGuesses);              // Show remaining guesses
+
+            var guess = getGuess();                                  // Prompt player for a guess
+            if (guess === null) break;                               // Exit if player cancels
+
+            guess = guess.toLowerCase();                             // Ensure guess is lowercase
+
+            if (guess.length !== 1) {
+                alert("Please enter a single letter.");              // Check input length
+                continue;
+            }
+
+            var appearances = updateGameState(guess, word, answerArray); // Check guess in word
+
+            if (appearances === 0) {
+                remainingGuesses--;                                  // Wrong guess = lose a guess
+                alert("Wrong guess! Try again.");
+            } else {
+                remainingLetters -= appearances;                     // Correct guess = reveal letters
+                alert("Correct! You revealed " + appearances + " letter(s).");
             }
         }
 
-        // Game finished - display final word state
-        alert(answerArray.join(" "));
-
-        // Congratulate player or show failure message
+        // Game over message
         if (remainingLetters === 0) {
-            alert("Good job! The answer was \"" + word + "\"");
+            showAnswerAndCongratulatePlayer(answerArray, word);      // Player wins
         } else {
-            alert("Out of guesses! The word was \"" + word + "\"");
+            alert("😢 You're out of guesses. The word was: " + word); // Player loses
         }
 
-        console.log("Game over. Word was:", word);      // Log final word to console for debugging
     </script>
 </body>
+
 </html>

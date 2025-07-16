@@ -29,3 +29,4 @@ function areArraysSame(a, b) {
 // Test cases
 console.log(areArraysSame([10, 20, 30], [10, 20, 30])); // true — arrays match
 console.log(areArraysSame([10, 20, 30], [40, 50, 60])); // false — arrays do not match
+console.log(areArraysSame([10, 20, 30], [10, 20, 30, 40, 50])); // false — arrays are diffrent lengths
