@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>People Array Example</title> <!-- Title shown in browser tab -->
+</head>
+
+<body>
+
+    <h2>Output:</h2> <!-- Main heading -->
+
+    <div id="peopleIKnow"></div> <!-- Empty div to show array output using innerHTML -->
+
+    <script>
+        document.write("<strong>-------People Array-------</strong><br>");
+        var people = ["Teddy", "Cathy", "Bobby"];                    // Create array with 3 names
+        document.write("1. The people's Array: " + people + "<br><br>"); // Display original array
+
+        people[0] = "Georgie";                                       // Change "Teddy" to "Georgie"
+        document.write("2. After changing the value: " + people + "<br>"); // Show updated array
+
+        // Using valueOf (similar to toString)
+        document.getElementById("peopleIKnow").innerHTML = people.valueOf(); // Display in div using innerHTML
+
+        document.write("<br><strong>-------Other People Array-------</strong><br>");
+        var otherpeople = ["Mary", "Bobby", "Judy", "Eddie", "Herbie", "Tony"]; // Create second array
+        document.write("3. The Other people's Array: " + otherpeople + "<br>"); // Display otherpeople
+
+        document.write("<br><strong>-------My People Array-------</strong><br>");
+        var myPeople = people.concat(otherpeople);                   // Combine both arrays
+        document.write("1. My new combined array: " + myPeople + "<br><br>"); // Show combined result
+
+        var pp = people.indexOf("Eddie");                            // Try to find "Eddie" in people (returns -1)
+        document.write("2. Index of 'Eddie': " + pp + "<br><br>");   // Show index (will be -1)
+
+        var joinedPeople = people.join(" # ");                       // Join array items with " # "
+        document.write("3. Joined people with #: " + joinedPeople + "<br><br>"); // Show joined string
+
+        var lastIndexBobby = people.lastIndexOf("Bobby");            // Get last index of "Bobby"
+        document.write("4. Last index of 'Bobby': " + lastIndexBobby + "<br><br>"); // Show result
+
+        var removedPerson = people.pop();                            // Remove last element from people
+        document.write("5. Removed last person: " + removedPerson + "<br>"); // Show who was removed
+        document.write("After pop: " + people + "<br><br>");         // Show updated array
+
+        people.push("Teddy");                                        // Add "Teddy" to the end
+        document.write("6. After pushing 'Teddy': " + people + "<br><br>"); // Show updated array
+
+        people.reverse();                                            // Reverse array order
+        document.write("7. After reversing: " + people + "<br><br>"); // Show reversed array
+
+        var shiftedPerson = people.shift();                          // Remove first item
+        document.write("8. Removed first person: " + shiftedPerson + "<br>"); // Show removed item
+        document.write("After shift: " + people + "<br><br>");       // Show array after shift
+
+        people.unshift("Teddy");                                     // Add "Teddy" to the beginning
+        document.write("9 After unshifting 'Teddy': " + people + "<br><br>"); // Show updated array
+
+        var people1 = people.slice(0, 3);                             // Get first 3 elements (non-destructive)
+        document.write("10. After slice (0 to 3): " + people1 + "<br><br>"); // Show sliced result
+
+        var people2 = people.sort();                                 // Sort alphabetically
+        document.write("11. After sort: " + people2 + "<br><br>");   // Show sorted array
+
+        people.splice(1, 0, "Cathy");                                 // Insert "Cathy" at index 1
+        document.write("12. After splice (insert 'Cathy' at index 1): " + people + "<br>"); // Show final array
+    </script>
+
+</body>
+
+</html>
