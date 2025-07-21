@@ -1,0 +1,18 @@
+body {
+    font-family: sans-serif;
+    background-color: aqua;
+}
+#instructions {
+    background-color: rgb(253, 43, 78);
+    padding: 6px;
+    margin: 6px;
+}
+#orderForm {
+    width: 75%;
+    margin: 20px auto;
+}
+#receipt {
+    background-color: #ddf63d;
+    color: rgb(18, 18, 2);
+    padding: 6px;
+}
